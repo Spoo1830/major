@@ -1,0 +1,102 @@
+package com.example.sos;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+
+import com.google.android.material.color.DynamicColors;
+
+public class HomeActivity extends AppCompatActivity {
+
+    // 1. Variable for the new card is added here
+    CardView registerContact, editMessage, sosguid, helpline, showContact, Info, btnSosService, recordingsCard;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        DynamicColors.applyToActivitiesIfAvailable(getApplication());
+        setContentView(R.layout.activity_home);
+
+        // Initialize all your existing cards
+        registerContact = findViewById(R.id.registerContact);
+        editMessage = findViewById(R.id.editMessage);
+        btnSosService = findViewById(R.id.btnSosService);
+        sosguid = findViewById(R.id.sosguid);
+        helpline = findViewById(R.id.helpline);
+        Info = findViewById(R.id.Info);
+        showContact = findViewById(R.id.showContact);
+
+        // 2. Initialize the new recordings card
+        // Make sure you have a CardView in your activity_home.xml with the id "recordings"
+        recordingsCard = findViewById(R.id.recordings);
+
+
+        // --- Listeners for your existing cards (no changes here) ---
+        registerContact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, RegisterNumberActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        editMessage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, EditMessageActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnSosService.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+        sosguid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this, Guide.class);
+                startActivity(intent);
+            }
+        });
+        helpline.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this, SosCall.class);
+                startActivity(intent);
+            }
+        });
+        Info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this, Instructions.class);
+                startActivity(intent);
+            }
+        });
+
+        showContact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this, ShowContact.class);
+                startActivity(intent);
+            }
+        });
+
+
+        // 3. Add the OnClickListener for the new recordings card
+        recordingsCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, RecordingsActivity.class);
+                startActivity(intent);
+
+            }
+        });
+    }
+}

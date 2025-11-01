@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp"
+    android:gravity="center_vertical"
+    android:background="?attr/selectableItemBackground">
+
+    <ImageView
+        android:id="@+id/ivPlayIcon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@android:drawable/ic_media_play"
+        app:tint="?attr/colorPrimary"
+        android:layout_marginEnd="16dp"/>
+
+    <TextView
+        android:id="@+id/tvRecordingName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="SOS_Recording_20251028.3gp"
+        android:textSize="16sp"
+        android:textColor="?attr/colorOnSurface"/>
+
+    <!-- THIS IS THE NEW DELETE ICON -->
+    <ImageView
+        android:id="@+id/ivDeleteIcon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:padding="8dp"
+        android:layout_marginStart="16dp"
+        android:src="@android:drawable/ic_menu_delete"
+        app:tint="?attr/colorError" />
+
+</LinearLayout>
